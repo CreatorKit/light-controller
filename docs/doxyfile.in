@@ -1,0 +1,22 @@
+PROJECT_NAME           = "@CMAKE_PROJECT_NAME@"
+PROJECT_NUMBER         = @led_controller_VERSION@
+JAVADOC_AUTOBRIEF      = YES
+HTML_HEADER            = @PROJECT_SOURCE_DIR@/creator_header.html
+HTML_FOOTER            = @PROJECT_SOURCE_DIR@/creator_footer.html
+GENERATE_LATEX         = NO
+#HAVE_DOT               = YES
+STRIP_FROM_PATH        = @PROJECT_SOURCE_DIR@ \
+                         @PROJECT_BINARY_DIR@
+INPUT                  = @PROJECT_SOURCE_DIR@/../src/ \
+                         @PROJECT_SOURCE_DIR@/mainpage.dox
+FILE_PATTERNS          = *.h \
+                         *.c
+RECURSIVE              = YES
+EXTRACT_STATIC         = YES
+HTML_STYLESHEET        = @PROJECT_SOURCE_DIR@/doxygen.css
+HTML_EXTRA_STYLESHEET  = @PROJECT_SOURCE_DIR@/creator.css
+HTML_EXTRA_FILES       = @PROJECT_SOURCE_DIR@/tabs.css \
+                         @PROJECT_SOURCE_DIR@/imgteclogo.png \
+                         @PROJECT_SOURCE_DIR@/creatorlogo.png
+GENERATE_TAGFILE       = @PROJECT_BINARY_DIR@/tagfile
+USE_MDFILE_AS_MAINPAGE = @doxy_main_page@
