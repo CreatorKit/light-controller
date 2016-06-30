@@ -1,2 +1,78 @@
-# light-controller
-Light controller application for Creator Ci40 platform
+
+![Creator logo](docs/creatorlogo.png)
+
+# Led Controller application
+
+## Overview
+Light controller application runs on Ci40 board. One MikroE board acts as awalwm2m client having a clicker which detects motion. Controller application acts as awalwm2m server and observes any changes in lwm2m object registered by client on server, and whenever there is a change, controller gets a notification for the same, and glow led for 5 seconds. 
+
+| Object Name       | Object ID      | Resource Name       | Resource ID |
+| :----             | :--------------| :-------------      | :-----------|
+| "Presence Sensor" | 3302           | "IlluminanceSensor" | 5501        |
+
+## Prerequisites
+Prior to running light controller application, make sure that:
+- Awalwm2m server daemon(awa_serverd) is running.
+- Awalwm2m bootstrap daemon(awa_bootstrapd) is running.
+
+**NOTE:** Please do "ps" on console to see "specific" process is running or not.
+
+## Application flow diagram
+![Light Controller Sequence Diagram](docs/light-controller-seq-diag.png)
+
+## API guide
+
+Light Controller documentation is available as a Doxygen presentation which is generated via the following process.
+
+  1. Install [Doxygen ](http://www.stack.nl/~dimitri/doxygen/download.html): ```` sudo apt-get install doxygen````
+  2. Generate the documentation:
+
+        $ light-controller: mkdir build
+        $ light-controller/build: cd build
+        $ light-controller/build: cmake ../docs
+        $ light-controller/build: make docs
+
+The output can be found in the build/html directory and viewed by opening index.html with your web browser.
+
+## Running Application on Ci40 board
+Light Controller Application is getting started as a daemon. Although we could also start it from the command line as :
+
+*$ light_controller_appd*
+
+Output looks something similar to this :
+```
+Light Controller Application
+
+------------------------
+
+
+Establish server session for port:54321 and address:127.0.0.1
+
+Server session established
+
+
+Defining IlluminanceSensor[3302] object on awalwm2m server
+
+Waiting for constrained device 'MotionSensorDevice' to be up
+
+Constrained device MotionSensorDevice registered
+
+Successfully added observe operation for sensor object[3302/0/5501]
+
+
+Received observe callback for sensor object[3302/0/5501] with value 1
+
+Sensor state has changed
+
+Turn ON led on Ci40 board
+
+Turn OFF led on Ci40 board
+
+Received observe callback for sensor object[3302/0/5501] with value 2
+
+Sensor state has changed
+
+Turn ON led on Ci40 board
+
+Turn OFF led on Ci40 board
+```
