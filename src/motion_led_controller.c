@@ -29,8 +29,8 @@
  */
 
 /**
- * @file light_controller.c
- * @brief Light controller application observes the IPSO resource for motion sensor on constrained device.
+ * @file motion_led_controller.c
+ * @brief Motion-Led controller application observes the IPSO resource for motion sensor on constrained device.
  *        On receipt of AwaLWM2M notification, ci40 will glow on board led for a period of 5 seconds.
  *        If further notifications are observed during the 5 second period then time out is restarted.
  */
@@ -191,7 +191,7 @@ static void UpdateLed(bool status, bool isHeartbeat)
 }
 
 /**
- * @brief Prints light_controller_appd usage.
+ * @brief Prints motion_led_controller_appd usage.
  * @param *program holds application name.
  */
 static void PrintUsage(const char *program)
@@ -206,7 +206,7 @@ static void PrintUsage(const char *program)
 }
 
 /**
- * @brief Parses command line arguments passed to light_controller_appd.
+ * @brief Parses command line arguments passed to motion_led_controller_appd.
  * @return -1 in case of failure, 0 for printing help and exit, and 1 for success.
  */
 static int ParseCommandArgs(int argc, char *argv[], const char **fptr)
