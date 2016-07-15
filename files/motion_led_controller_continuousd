@@ -5,11 +5,11 @@ STOP=10
 
 SERVICE_DAEMONIZE=1
 SERVICE_WRITE_PID=1
-SERVICE_PID_FILE=/var/run/light_controller_continuous.pid
+SERVICE_PID_FILE=/var/run/motion_led_controller_continuous.pid
 
 start()
 {
-    start-stop-daemon -m -S -p $SERVICE_PID_FILE -b -x /usr/bin/light_controller_continuous.sh
+    start-stop-daemon -m -S -p $SERVICE_PID_FILE -b -x /usr/bin/motion_led_controller_continuous.sh
 }
 
 stop()

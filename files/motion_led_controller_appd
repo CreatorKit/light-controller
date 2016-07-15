@@ -6,7 +6,7 @@ STOP=10
 SERVICE_DAEMONIZE=1
 SERVICE_WRITE_PID=1
 
-APP=light_controller_appd
+APP=motion_led_controller_appd
 LOGFILE=/var/log/$APP
 
 start(){
