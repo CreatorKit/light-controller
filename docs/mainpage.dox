@@ -1,0 +1,7 @@
+/** @mainpage Motion-Led Controller application
+@section overview Overview
+
+Motion-Led controller application runs on Ci40 board.
+
+One MikroE board acts as awalwm2m client having a clicker which detects motion. Controller application acts as awalwm2m server and observes any changes in lwm2m object registered by client on server, and whenever there is a change, controller gets a notification for the same, and glow led for 5 seconds.
+ */
