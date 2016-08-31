@@ -34,6 +34,11 @@ Motion-Led Controller documentation is available as a Doxygen presentation which
 
 The output can be found in the build/html directory and viewed by opening index.html with your web browser.
 
+## Using OpenWrt SDK to build standalone package
+
+Please refer [OpenWrt-SDK-build-instructions](https://github.com/CreatorKit/openwrt-ckt-feeds#building-creatorkit-packages-using-pre-compiled-openwrt-sdk-for-ci40-marduk) for exact build instructions.
+
+
 ## Running Application on Ci40 board
 Motion-Led Controller Application is getting started as a daemon. Although we could also start it from the command line as :
 
